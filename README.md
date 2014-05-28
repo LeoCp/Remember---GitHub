@@ -1,11 +1,9 @@
 REMEMBER - GITHUB
 ==================
-        ///////////////////////////GITHUB///////////////////////////////
-       //1 - git clone https://github.com/username/username.github.io//
-      //                                                            //
-     //2 - git add --all                                           //
-    //                                                            //
-   //3 - git commit -m "Initial commit"                          //
-  //                                                            //
- //4 - git push                                                //
-/////////////////////////REMEMBER///////////////////////////////
+1 - git clone https://github.com/username/username.github.io                                                            
+
+2 - git add --all                                                                                                       
+
+3 - git commit -m "Initial commit"                          
+                                                            
+4 - git push                                                
