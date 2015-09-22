@@ -1,0 +1,212 @@
+#Git - É um Controle de versão distriduido
+
++ Controle de versão é um sistema que gerencia que resgistar alterações em arquivos - MAQUINA DO TEMPO.
+
+
++ Varias pessoas podem trabalhar no mesmo projeto.
+
+
++ Fluxo de trabalho do Git:
+
+ - Repositorio:
+ E como se fosse o servidor central onde os dados do projeto ficam por padrão.
+
+ - Estação de trabalho:
+ Onde os programadores estão trabalhando no sistema.
+
+
++ O git é um sitema de controle de versão distribuido isso quer dizer que cada versão do projeto esta em todas as estações de trabalho.
+
+
++ Forma de trabalho e feita 3 estagios do projeto:
+
+ - 1 estagio(WORKING DIRECTORY):
+  É o diretorio onde vc esta trabalhando. (git clone)
+
+ - 2 estagio(STAGE AREA):
+  É a sala de espera, e  onde os arquivos modificados ficam antes de  serem enviados para o Repositorio. (git add)
+
+ - 3 estagio (GIT DIRECTORY):
+  Os aquivos vão para o repositorio.(git commit)
+
++ Configurações iniciais
+
+ - Configurando o nome:
+ git config --global user.name "Leonardo"
+
+ - Configuração de email:
+ git config --global user.email "leonardocolodette0@gmail.com"
+
++ Comandos
+
+ - Criando repositorio:
+    > git init    // Cria um repositorio na pasta atual
+
+ - Status do projeto:
+    git status
+
+ - Acompanhar os aquivos com o controle de versão:
+ Colocar os na STAGE AREA
+
+    > git add nomedoarquivo
+
+    > git add leo.txt
+
+    > git add *.txt // adiciona todos os aquivos txt
+
+    > git add . // adiciona todos os arquivos
+
+    > git add -all // adiciona todos
+
+ - Colocar os arquivos no GIT DIRECTORY:
+ Colocar o arquivo no repositorio.
+
+   > git commit -m "MensagemParaIdentificar"
+
+ - Pulando a etapa da STAGE AREA
+
+    > git commit -a -m "Menssagem"
+
+ - Consulta alterações feitas dentro do arquivo que estão na WORKING DIRETORY
+
+    > git diff
+
+ - Consular alterações feitas dentro do arquivo que estao na STAGE AREA
+
+   > git diff --staged
+
+ - Mostra todos os log dos commits feito no projeto desde o começo, o Historico dos commits:
+
+    > git log
+
+    > git log --pretty=oneline // Montra a Chave e a menssagem dos commits
+
+ - Mostrar o historico dos commits e as alterações nos arquivos:
+
+    > git log -p
+
+    sair e so prescionar q
+
+ - Inteface Grafica:
+
+    > gitk
+
+ - Editar o commit recente que vc fez: Não prescisar de fazer outro commit por ter esquecido de colocar algumas alterações no arquivo
+
+    > git commit --amend -m "Terceiro commit (edição)" // o Terceiro Commite e o ultimo commit que vc fez
+
+ - Tirar o aquivo da STAGE AREA:
+
+    > git reset HEAD NOMEDOARQUIVO.TXT
+
+ - Voltar ao status origal de um arquivo que esta na WORKING DIRECTORY
+
+    > git checkout -- NOMEDOARQUIVO.TXT
+
+ - Apagando arquivos da WORKING DIRECTORY
+
+    > git rm NOMEDOARQUIVO.TXT
+
++ Tag e Branch
+
+ - Tag:
+    Uma tag é muito usada para criar marcações nas versões diferentes em um sistema.
+
+    CRIANDO UMA TAG:
+
+      > git tag -a v1.0 -m "MENSSAGEMDATAG" // Quando vc cria uma tag ela fica no commit atual
+
+      Exemplo:
+        > git tag -a v1.0 -m "Versão 1.0"
+
+    CRIANDO UMA TAG COM UMA VERSÃO ANTIGA DO SISTEMA DO COMMIT ANTIDO:
+
+      > git tag -a V0.0 CHAVEDOCOMMIT -m "Versão 0.0"
+
+        Exemplo:
+
+          > git tag -a v0.0 e9ed419c8007af7b66ecaa78117608a8eff2dd09 -m "Versão 0.0"
+
+    MOSTRA AS TAGS:
+
+      > git tag
+
+    VER AS INFORMAÇÕES DA TAG:
+
+      > git show NOMEDATAG
+
+        EXEMPLO:
+
+          > git show V0.0
+
+    USAR A TAG:
+
+      > git checkout NOMEDATAG
+
+        EXEMPLO:
+
+          > git checkout V0.0
+
+    VOLTAR NO PADRÃO MASTER DO SISTEMA:
+
+      > git checkout maste
+
+    APAGANDO A TAG:
+
+      > git tag -d NOMEDAVERSÃO
+
+        EXEMPLO:
+
+         > git tag -d V0.0
+ - Brand:
+  O brand é muito melhor do que a TAG, ele trabalha com varias ramificações
+  Quando vc cria um repositorio no git ele cria um brand, que é o brand master
+
+  A maioria das empresas trabalham com o ambiente de PRODUÇÃO que é o instalado no cliente o ambiente de TESTE o de DESEMVOLVIMENTO.... e cada um desses ambientes é um BRAND
+
+    CRIANDO UM BRANCH:
+
+     > git branch NOMEDOBRANCH
+
+      Exemplo:
+
+         > git branch test
+
+
+    USANDO O BRANCH:
+
+      > git checkout NOMEDOBRAND
+
+        Exemplo:
+
+          >git checkout test
+
+    CRIANDO E USANDO BRANCH:
+
+     > git checkout -b NOMEDOBRANCH
+
+      Exemplo:
+
+        > git checkout -b test
+
+    MOSTRANDO OS BRANCHS:
+
+      > git branch
+
+    TRAZENDO AS ALTERAÇÕES PARA O BRANCH MASTER(O sitema principal):
+
+        > git merge NOME-DO-BRACH-QUE-VC-QUER-TRAZER-PARA-O-MASTER
+
+         //Sendo que vc tem que estar no brach master
+
+          Exemplo:
+
+            > git merge test
+
+    APAGANDO BRANCH:
+
+     > git branch -d NOMEDOBRANCH
+
+      Exemplo:
+
+       >git branch -d test
